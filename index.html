@@ -3,95 +3,172 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salwa | Portfolio</title>
+    <title>Salwa Shuman | Portfolio</title>
     <meta
       name="description"
-      content="Portfolio website for Salwa - projects, skills, and contact."
+      content="Modern portfolio for Salwa Shuman with projects, experience, and work showcase."
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=20260415" />
   </head>
-  <body>
+  <body class="intro-active">
+    <div class="intro-overlay" id="introOverlay" aria-hidden="true">
+      <h1 class="intro-name" aria-live="polite">Salwa Shuman</h1>
+    </div>
     <header class="header">
       <nav class="nav container">
-        <a href="#home" class="logo">Salwa</a>
+        <a href="#home" class="site-brand">Salwa Shuman</a>
         <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
           Menu
         </button>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="top-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+            <span class="theme-label">Dark</span>
+          </button>
+          <a
+            class="github-link"
+            href="https://github.com/SalwaTheEngineer"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile SalwaTheEngineer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1 .07 1.54 1.03 1.54 1.03.9 1.53 2.36 1.09 2.93.84.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.41.1 2.66.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.32.67.93.67 1.89v2.8c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+              />
+            </svg>
+            <span>@SalwaTheEngineer</span>
+          </a>
+        </div>
       </nav>
     </header>
 
     <main id="home">
       <section class="hero container">
-        <p class="eyebrow">Web Developer</p>
-        <h1>Hi, I am Salwa.</h1>
+        <p class="eyebrow">Frontend Engineer and Designer</p>
+        <h1>Simple, modern, and polished digital experiences.</h1>
         <p class="hero-text">
-          I build clean, user-friendly websites and web apps focused on performance and great
-          user experience.
+          I build responsive websites that feel smooth and intentional. I care about clear
+          structure, thoughtful details, and memorable user experience.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          <a href="#projects" class="btn">See Projects</a>
+          <a href="#gallery" class="btn btn-secondary">View Gallery</a>
         </div>
       </section>
 
-      <section id="about" class="section container">
-        <h2>About</h2>
+      <section id="about" class="section container reveal">
+        <p class="section-tag">About</p>
+        <h2>Developer focused on clean execution.</h2>
         <p>
-          I am a developer passionate about creating modern websites. I enjoy turning ideas into
-          responsive and accessible products.
+          I enjoy building websites and interfaces that are modern, lightweight, and easy to use. I
+          combine design thinking with engineering discipline to deliver work that feels premium and
+          performs well across devices.
         </p>
       </section>
 
-      <section id="projects" class="section container">
-        <h2>Projects</h2>
+      <section id="experience" class="section container reveal">
+        <p class="section-tag">Experience</p>
+        <h2>Professional experience and impact.</h2>
         <div class="cards">
           <article class="card">
-            <h3>Project One</h3>
-            <p>Short description of your project, what it does, and your role in it.</p>
-            <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
+            <p class="card-meta">2025 - Present</p>
+            <h3>Frontend Developer - Company Name</h3>
+            <p>
+              Built responsive product pages, optimized Core Web Vitals, and improved conversion
+              through cleaner UX.
+            </p>
           </article>
           <article class="card">
-            <h3>Project Two</h3>
-            <p>Short description of your project, what tech you used, and key result.</p>
-            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-          </article>
-          <article class="card">
-            <h3>Project Three</h3>
-            <p>Short description of your project, including the problem it solves.</p>
-            <a href="#" target="_blank" rel="noreferrer">Case Study</a>
+            <p class="card-meta">2024 - 2025</p>
+            <h3>Web Designer and Developer - Agency Name</h3>
+            <p>
+              Designed and launched client websites with strong visual identity and reusable UI
+              systems.
+            </p>
           </article>
         </div>
       </section>
 
-      <section id="skills" class="section container">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Git</li>
-          <li>Responsive Design</li>
-        </ul>
+      <section id="projects" class="section container reveal">
+        <p class="section-tag">Projects</p>
+        <h2>Selected builds.</h2>
+        <div class="cards">
+          <article class="card project-card">
+            <h3>E-commerce Website</h3>
+            <p>Responsive storefront experience with product filtering and streamlined checkout.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card project-card">
+            <h3>Analytics Dashboard</h3>
+            <p>Clean reporting dashboard designed for fast decision-making and easy data access.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a href="#" target="_blank" rel="noreferrer">Case Study</a>
+            </div>
+          </article>
+          <article class="card project-card">
+            <h3>Brand Portfolio Site</h3>
+            <p>Professional portfolio website focused on storytelling, typography, and conversion.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="contact" class="section container">
-        <h2>Contact</h2>
-        <p>Want to work together? Reach out anytime.</p>
+      <section id="gallery" class="section container reveal">
+        <p class="section-tag">Gallery / Work Showcase</p>
+        <h2>Visual work and project snapshots.</h2>
+        <div class="gallery-grid">
+          <article class="gallery-item">
+            <img src="https://picsum.photos/seed/salwa-1/900/700" alt="Website homepage design preview" />
+          </article>
+          <article class="gallery-item">
+            <img src="https://picsum.photos/seed/salwa-2/900/700" alt="Dashboard UI project screenshot" />
+          </article>
+          <article class="gallery-item">
+            <img src="https://picsum.photos/seed/salwa-3/900/700" alt="Mobile design and branding concept" />
+          </article>
+          <article class="gallery-item">
+            <img src="https://picsum.photos/seed/salwa-4/900/700" alt="Creative layout and typography showcase" />
+          </article>
+        </div>
+        <p class="gallery-note">
+          Replace each image `src` with your own screenshots, photography, or design exports.
+        </p>
+      </section>
+
+      <section id="contact" class="section container reveal">
+        <p class="section-tag">Contact</p>
+        <h2>Let us work together.</h2>
+        <p>Available for freelance work, collaborations, and full-time opportunities.</p>
         <a class="contact-link" href="mailto:youremail@example.com">youremail@example.com</a>
       </section>
     </main>
 
     <footer class="footer">
-      <p>&copy; <span id="year"></span> Salwa. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Salwa Shuman. Crafted in dark mode.</p>
+      <p class="footer-note">Oh, I also created this website ;)</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260415"></script>
   </body>
 </html>
