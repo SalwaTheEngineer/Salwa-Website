@@ -16,7 +16,18 @@ Update these parts in `index.html`:
 - About section text
 - Projects and links
 - Skills list
-- Contact email
+- Contact email in `script.js` (`CONTACT_EMAIL`) and `index.html` mailto link
+- Contact form messages are delivered via [FormSubmit](https://formsubmit.co)
+
+## Contact form setup
+
+The contact form sends messages to your inbox through FormSubmit (no backend required).
+
+1. Deploy or open the site and submit the form once with a test message.
+2. Check **Salwashuman78@gmail.com** for a FormSubmit activation email and click the confirmation link.
+3. After that, every form submission goes to your inbox.
+
+To use a different email, update `CONTACT_EMAIL` in `script.js` and the mailto link in `index.html`.
 
 ## Run locally
 
