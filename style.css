@@ -385,8 +385,13 @@ body.sidebar-collapsed {
 }
 
 @media (max-width: 720px) {
+  #sidebar {
+    display: none;
+  }
+
   #terminal {
     grid-template-columns: 1fr;
+    margin-left: 0;
     min-width: 0;
   }
 
@@ -401,6 +406,10 @@ body.sidebar-collapsed {
   .terminal-content {
     padding: 2.5rem 1.25rem 2rem 1.25rem;
     min-width: 0;
+  }
+
+  .terminal-content > .sidebar-toggle {
+    display: none;
   }
 }
 
