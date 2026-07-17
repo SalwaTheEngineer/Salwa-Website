@@ -36,7 +36,11 @@ function initSidebarToggle() {
     localStorage.setItem('sidebar-collapsed', String(collapsed));
   };
 
-  const savedCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+  const storedPreference = localStorage.getItem('sidebar-collapsed');
+  const savedCollapsed =
+    storedPreference !== null
+      ? storedPreference === 'true'
+      : window.innerWidth <= 720;
   applyState(savedCollapsed);
 
   toggle.addEventListener('click', () => {

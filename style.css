@@ -384,6 +384,26 @@ body.sidebar-collapsed {
   gap: 4rem;
 }
 
+@media (max-width: 720px) {
+  #terminal {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .line-gutter {
+    display: none;
+  }
+
+  .terminal-tab-bar {
+    min-width: 0;
+  }
+
+  .terminal-content {
+    padding: 2.5rem 1.25rem 2rem 1.25rem;
+    min-width: 0;
+  }
+}
+
 /* HERO */
 
 #hero {
@@ -394,7 +414,7 @@ body.sidebar-collapsed {
 }
 
 #hero h1 {
-  font-size: 5rem;
+  font-size: clamp(2.25rem, 1.6rem + 5vw, 5rem);
   margin-top: 5rem;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -445,6 +465,21 @@ body.sidebar-collapsed {
 @keyframes cursor-blink {
   50% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  #hero h1 {
+    margin-top: 2.75rem;
+  }
+
+  .typewriter-line {
+    width: 100%;
+  }
+
+  .typewriter-content {
+    white-space: normal;
+    word-break: break-word;
   }
 }
 
