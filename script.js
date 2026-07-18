@@ -1,34 +1,30 @@
 function initTypewriter() {
   const textEl = document.getElementById('typewriter-text');
-  const featuredEl = document.getElementById('hero-featured');
   if (!textEl) return;
 
-  const text =
-    textEl.textContent.trim() ||
-    'Welcome to my portfolio! Enjoy your stay :D';
-  const fullText = text.startsWith(' ') ? text : ` ${text}`;
+  const lines = ['Welcome to my portfolio!', 'Enjoy your stay :D'];
   const speedMs = 42;
-  let index = 0;
+  let lineIndex = 0;
+  let charIndex = 0;
 
-  textEl.textContent = '';
-
-  const showFeatured = () => {
-    if (!featuredEl) return;
-    featuredEl.hidden = false;
-    requestAnimationFrame(() => {
-      featuredEl.classList.add('is-visible');
-    });
-  };
+  textEl.innerHTML =
+    '<span class="typewriter-l"></span><br><span class="typewriter-l"></span>';
+  const lineSpans = textEl.querySelectorAll('.typewriter-l');
 
   const typeNext = () => {
-    if (index < fullText.length) {
-      textEl.textContent = fullText.slice(0, index + 1);
-      index += 1;
+    if (lineIndex >= lines.length) return;
+
+    const current = lines[lineIndex];
+    if (charIndex < current.length) {
+      lineSpans[lineIndex].textContent = current.slice(0, charIndex + 1);
+      charIndex += 1;
       setTimeout(typeNext, speedMs);
       return;
     }
 
-    setTimeout(showFeatured, 280);
+    lineIndex += 1;
+    charIndex = 0;
+    setTimeout(typeNext, speedMs * 4);
   };
 
   typeNext();
@@ -77,7 +73,8 @@ initLineNumbers();
 
 function initTerminalTabs() {
   const tabs = document.querySelectorAll('.terminal-tab');
-  const sections = ['hero', 'about', 'projects', 'animations', 'contact']
+  const tabBar = document.querySelector('.terminal-tab-bar');
+  const sections = ['hero', 'projects', 'animations', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
@@ -89,10 +86,30 @@ function initTerminalTabs() {
     });
   };
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const barHeight = tabBar ? tabBar.offsetHeight : 0;
+    const top =
+      section.getBoundingClientRect().top + window.scrollY - barHeight - 8;
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: 'smooth',
+    });
+    setActiveTab(id);
+  };
+
   tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const id = tab.getAttribute('href')?.slice(1);
-      if (id) setActiveTab(id);
+    tab.addEventListener('click', (event) => {
+      const href = tab.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+
+      event.preventDefault();
+      const id = href.slice(1);
+      scrollToSection(id);
+      history.pushState(null, '', href);
     });
   });
 
