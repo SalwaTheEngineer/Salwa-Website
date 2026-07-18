@@ -3,59 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Salwa Shuman — CS Portfolio</title>
+    <meta
+      name="description"
+      content="Salwa Shuman — CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://salwashuman.com/">
+    <meta property="og:title" content="Salwa Shuman — CS Portfolio">
+    <meta
+      property="og:description"
+      content="Salwa Shuman — CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
+    >
+    <meta property="og:image" content="https://salwashuman.com/ninebynine-new.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salwa Shuman — CS Portfolio">
+    <meta
+      name="twitter:description"
+      content="Salwa Shuman — CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
+    >
+    <meta name="twitter:image" content="https://salwashuman.com/ninebynine-new.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
 
-      <!-- Left sidebar nav -->
-      <aside id="sidebar">
-        <details class="nav-dropdown" id="nav-dropdown" open>
-          <summary class="nav-dropdown-toggle">Salwa_Portfolio</summary>
-          <nav id="sidebar-nav" class="nav-dropdown-menu">
-            <ul>
-              <li>
-                <a href="#hero">
-                  <span class="nav-file-icon nav-file-icon--readme" aria-hidden="true">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M3 1h7l3 3v11H3V1zm7 0v3h3M5 5.5h4M5 8h6M5 10.5h5"/></svg>
-                  </span>
-                  <span class="nav-file-label">README.md</span>
-                </a>
-              </li>
-              <li>
-                <a href="#projects">
-                  <span class="nav-file-icon nav-file-icon--projects" aria-hidden="true">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M3 1h7l3 3v11H3V1zm7 0v3h3M5 6h6M5 8.5h6M5 11h4"/></svg>
-                  </span>
-                  <span class="nav-file-label">Projects.css</span>
-                </a>
-              </li>
-              <li>
-                <a href="#animations">
-                  <span class="nav-file-icon nav-file-icon--animations" aria-hidden="true">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M3 1h7l3 3v11H3V1zm7 0v3h3M5 6h6M5 8.5h6M5 11h4"/></svg>
-                  </span>
-                  <span class="nav-file-label">Animations.css</span>
-                </a>
-              </li>
-              <li>
-                <a href="#contact">
-                  <span class="nav-file-icon nav-file-icon--js" aria-hidden="true">
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><rect x="2" y="1" width="12" height="14" rx="1"/><path fill="#1a1a1a" d="M5 11.5 6.2 12l2.3-4-2.3-4L5 4.5 7.8 9 5 11.5zm6 0L9.8 12 7.5 8l2.3-4 1.2.5L8.7 9l2.8 2.5z"/></svg>
-                  </span>
-                  <span class="nav-file-label">Contact.js</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </details>
-      </aside>
-    
-      <!-- Right main terminal -->
+      <!-- Main terminal -->
       <main id="terminal">
         <header class="terminal-tab-bar">
-          <nav class="terminal-tabs" aria-label="Open files">
+          <nav class="terminal-tabs" aria-label="Site sections">
             <a href="#hero" class="terminal-tab terminal-tab--welcome active">Welcome.css</a>
             <a href="#about" class="terminal-tab terminal-tab--about">About_Me.html</a>
             <a href="#projects" class="terminal-tab terminal-tab--projects">Projects.css</a>
@@ -65,14 +41,6 @@
         </header>
         <div class="line-gutter" id="line-gutter" aria-hidden="true"></div>
         <div class="terminal-content">
-          <button
-            type="button"
-            id="sidebar-toggle"
-            class="sidebar-toggle"
-            aria-label="Collapse navigation"
-            aria-expanded="true"
-            aria-controls="nav-dropdown"
-          >‹</button>
 
         <section id="hero">
           <h1>Salwa Shuman</h1>
@@ -80,9 +48,15 @@
             <span class="typewriter-line">
               <span class="typewriter-prompt">&gt;</span>
               <span class="typewriter-content">
-                <span id="typewriter-text"></span><span class="typewriter-cursor" aria-hidden="true"></span>
+                <span id="typewriter-text"> Welcome to my portfolio! Enjoy your stay :D</span><span class="typewriter-cursor" aria-hidden="true"></span>
               </span>
             </span>
+          </p>
+          <p class="hero-featured" id="hero-featured" hidden>
+            <span class="hero-featured-prompt">&gt;</span>
+            <span class="hero-featured-label">featured:</span>
+            <a href="https://9by9.org" target="_blank" rel="noopener noreferrer">Nine by Nine</a>
+            <span class="hero-featured-desc"> — a Sudoku AI you can play</span>
           </p>
         </section>
     
@@ -204,7 +178,9 @@
                   <li>VR</li>
                   <li>Maya</li>
                 </ul>
-                <span class="badge">coming soon</span>
+                <div class="project-status">
+                  <span class="badge">coming soon</span>
+                </div>
               </div>
             </div>
             <figure class="project-display">

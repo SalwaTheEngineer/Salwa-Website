@@ -1,50 +1,40 @@
 function initTypewriter() {
   const textEl = document.getElementById('typewriter-text');
+  const featuredEl = document.getElementById('hero-featured');
   if (!textEl) return;
 
-  const text = ' Welcome to my portfolio! Enjoy your stay :D';
+  const text =
+    textEl.textContent.trim() ||
+    'Welcome to my portfolio! Enjoy your stay :D';
+  const fullText = text.startsWith(' ') ? text : ` ${text}`;
   const speedMs = 42;
   let index = 0;
 
+  textEl.textContent = '';
+
+  const showFeatured = () => {
+    if (!featuredEl) return;
+    featuredEl.hidden = false;
+    requestAnimationFrame(() => {
+      featuredEl.classList.add('is-visible');
+    });
+  };
+
   const typeNext = () => {
-    if (index < text.length) {
-      textEl.textContent = text.slice(0, index + 1);
+    if (index < fullText.length) {
+      textEl.textContent = fullText.slice(0, index + 1);
       index += 1;
       setTimeout(typeNext, speedMs);
+      return;
     }
+
+    setTimeout(showFeatured, 280);
   };
 
   typeNext();
 }
 
 initTypewriter();
-
-function initSidebarToggle() {
-  const sidebar = document.getElementById('sidebar');
-  const toggle = document.getElementById('sidebar-toggle');
-  if (!sidebar || !toggle) return;
-
-  const applyState = (collapsed) => {
-    sidebar.classList.toggle('collapsed', collapsed);
-    document.body.classList.toggle('sidebar-collapsed', collapsed);
-    toggle.setAttribute('aria-expanded', String(!collapsed));
-    toggle.setAttribute(
-      'aria-label',
-      collapsed ? 'Expand navigation' : 'Collapse navigation'
-    );
-    toggle.textContent = collapsed ? '›' : '‹';
-    localStorage.setItem('sidebar-collapsed', String(collapsed));
-  };
-
-  const savedCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
-  applyState(savedCollapsed);
-
-  toggle.addEventListener('click', () => {
-    applyState(!sidebar.classList.contains('collapsed'));
-  });
-}
-
-initSidebarToggle();
 
 function initLineNumbers() {
   const gutter = document.getElementById('line-gutter');
