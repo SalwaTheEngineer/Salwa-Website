@@ -253,6 +253,10 @@ body {
   color: rgba(255, 158, 210, 0.45);
 }
 
+.mobile-intro {
+  display: none;
+}
+
 /* HEADINGS */
 h2 {
   color: #00e1ff;
@@ -919,6 +923,12 @@ h2 {
 }
 
 /* MOBILE (< 768px) */
+/*
+ * One alignment system: every section left-aligns to a single 24px margin
+ * via .terminal-content padding. Spacing rhythm: 48px between sections,
+ * 16px within. Type scale: name 34 / headings 20 / body 16 / secondary 14.
+ * Glow lives only on the name.
+ */
 @media (max-width: 767px) {
   body {
     font-size: 16px;
@@ -939,18 +949,29 @@ h2 {
   }
 
   .terminal-content {
-    padding: 1.25rem 1rem 2rem;
-    gap: 1.75rem;
+    padding: 24px 24px 48px;
+    gap: 48px;
     min-width: 0;
   }
 
+  /* HERO ------------------------------------------------ */
+  #hero {
+    align-items: flex-start;
+    padding-top: 0;
+    gap: 16px;
+  }
+
   #hero h1 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.4rem;
+    font-size: 34px;
+    margin: 0;
+    text-align: left;
+    align-self: flex-start;
   }
 
   .hero-tagline {
-    font-size: 1rem;
+    font-size: 16px;
+    justify-content: flex-start;
+    margin: 0;
   }
 
   .typewriter-line {
@@ -963,23 +984,54 @@ h2 {
   }
 
   .hero-featured {
-    font-size: 0.8rem;
-    margin-top: 0.85rem;
-    padding: 0 0.25rem;
+    font-size: 14px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
   }
 
+  /* Photo row: 90px circle + one-line intro, between tagline and about */
+  .mobile-intro {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .mobile-intro-photo {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 1.5px solid #ff9ed2;
+    box-shadow: none;
+  }
+
+  .mobile-intro-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 158, 210, 0.75);
+  }
+
+  /* HEADINGS ------------------------------------------- */
   h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 
+  /* ABOUT ---------------------------------------------- */
   #about {
-    gap: 1rem;
+    align-items: stretch;
+    gap: 16px;
   }
 
   #about h2 {
-    order: 1;
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 
   .about-row {
@@ -987,69 +1039,64 @@ h2 {
   }
 
   .about-photo {
-    order: 0;
-    width: 100%;
-    max-width: 260px;
-    margin: 0.25rem auto 0;
-    align-self: center;
-    height: auto;
-  }
-
-  .about-photo img {
-    height: auto;
-    aspect-ratio: 2 / 3;
+    display: none;
   }
 
   .about-column {
-    order: 2;
     max-width: 100%;
-    gap: 1rem;
+    gap: 16px;
   }
 
   .about-box,
+  .about-box--connect,
   .animations-box,
   .contact-box,
   .project-card,
   .project-display {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-    max-width: calc(100% - 0.5rem);
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .about-content {
-    padding: 1.25rem 1.15rem;
-    font-size: 1rem;
+    padding: 16px;
+    font-size: 16px;
   }
 
   .social-links {
     flex-direction: column;
+    gap: 16px;
   }
 
   .social-link,
   .about-box--connect .social-link {
     min-height: 44px;
     padding: 0.75rem 1rem;
+    font-size: 14px;
+  }
+
+  /* PROJECTS ------------------------------------------- */
+  #projects,
+  #animations {
+    align-items: stretch;
+    gap: 16px;
   }
 
   #projects h2,
   #animations h2 {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 
   .project-row {
     grid-template-columns: 1fr;
-    gap: 0.85rem;
-    margin-bottom: 1rem;
+    gap: 16px;
+    margin-bottom: 0;
     max-width: 100%;
-  }
-
-  .project-row .project-card {
-    max-width: calc(100% - 0.5rem);
   }
 
   .project-display {
     min-height: 0;
-    width: calc(100% - 0.5rem);
   }
 
   .project-display img {
@@ -1060,7 +1107,7 @@ h2 {
   }
 
   .project-card p {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .project-card a {
@@ -1071,42 +1118,50 @@ h2 {
     display: none;
   }
 
+  /* ANIMATIONS ----------------------------------------- */
   .animations-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .animation-slot {
-    padding: 0.85rem;
+    padding: 16px;
   }
 
   .animation-slot-preview--embed {
     width: 100%;
+    max-width: 100%;
   }
 
   .animation-slot-link {
     min-height: 44px;
   }
 
+  /* CONTACT -------------------------------------------- */
+  #contact {
+    align-items: stretch;
+    gap: 16px;
+  }
+
   #contact h2 {
-    font-size: 1.5rem;
+    font-size: 20px;
     text-align: left;
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 
   .contact-box {
-    padding: 1.15rem 1.1rem;
-    max-width: calc(100% - 0.5rem);
+    padding: 16px;
   }
 
   .contact-form input,
   .contact-form textarea {
-    font-size: 1rem;
+    font-size: 16px;
     padding: 0.85rem 0.9rem;
     min-height: 44px;
   }
 
   .contact-submit {
-    font-size: 0.95rem;
+    font-size: 14px;
     padding: 0.85rem 1.5rem;
     min-height: 44px;
   }
