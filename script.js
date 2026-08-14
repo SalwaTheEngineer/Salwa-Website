@@ -134,6 +134,25 @@ function initTerminalTabs() {
 
 initTerminalTabs();
 
+function initGlassShine() {
+  const panels = document.querySelectorAll(
+    '.about-box, .project-card, .contact-box, .animation-slot'
+  );
+  if (!panels.length || window.matchMedia('(pointer: coarse)').matches) return;
+
+  panels.forEach((panel) => {
+    panel.addEventListener('pointermove', (event) => {
+      const rect = panel.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      panel.style.setProperty('--mx', `${x}%`);
+      panel.style.setProperty('--my', `${y}%`);
+    });
+  });
+}
+
+initGlassShine();
+
 const CONTACT_EMAIL = 'Salwashuman78@gmail.com';
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
@@ -178,7 +197,7 @@ if (form && statusEl) {
         throw new Error('Form submit failed');
       }
 
-      statusEl.textContent = 'message sent — thanks!';
+      statusEl.textContent = 'message sent, thanks!';
       statusEl.className = 'form-status success';
       form.reset();
     } catch {

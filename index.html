@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salwa Shuman — CS Portfolio</title>
+    <title>Salwa Shuman | CS Portfolio</title>
     <meta
       name="description"
-      content="Salwa Shuman — CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
+      content="Salwa Shuman, CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salwashuman.com/">
-    <meta property="og:title" content="Salwa Shuman — CS Portfolio">
+    <meta property="og:title" content="Salwa Shuman | CS Portfolio">
     <meta
       property="og:description"
-      content="Salwa Shuman — CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
+      content="Salwa Shuman, CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
     >
     <meta property="og:image" content="https://salwashuman.com/ninebynine-new.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Salwa Shuman — CS Portfolio">
+    <meta name="twitter:title" content="Salwa Shuman | CS Portfolio">
     <meta
       name="twitter:description"
-      content="Salwa Shuman — CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
+      content="Salwa Shuman, CS master's student at Northeastern University. Portfolio of AI projects, interactive tools, and 3D animation work."
     >
     <meta name="twitter:image" content="https://salwashuman.com/ninebynine-new.png">
     <link rel="stylesheet" href="style.css">
@@ -75,7 +75,7 @@
                     </p>
                     <p class="about-featured-project">
                       <a href="https://9by9.org" target="_blank" rel="noopener noreferrer">Nine by Nine</a>
-                      <span class="about-featured-desc"> — play it live</span>
+                      <span class="about-featured-desc">: play it live</span>
                     </p>
                   </div>
                 </div>
@@ -125,45 +125,40 @@
     
         <section id="projects">
           <h2>> Projects</h2>
-          <div class="project-row">
-            <div class="project-card">
+          <div class="project-grid">
+
+            <!-- Helm — Islamic dream interpretation app -->
+            <article class="project-card project-card--tile project-card--tile-mobile">
+              <figure class="project-display">
+                <a href="https://testflight.apple.com/join/uRJFShta" target="_blank" rel="noopener noreferrer" aria-label="Join Helm on TestFlight">
+                  <img src="helm-splash.jpg" alt="Helm app icon">
+                </a>
+              </figure>
               <div class="card-main">
-                <h3>Nine by Nine Sudoku AI</h3>
+                <h3>Helm</h3>
                 <p>
-                  the classic Sudoku game as a Constraint Satisfaction Problem (CSP) and compares
-                  backtracking, MRV, forward checking, and local search—with step-by-step
-                  visualization and performance metrics.
+                  AI dream interpretation grounded in Islamic sources (Ibn Sirin,
+                  Al-Kafi, and the Qur'an), surfaced through a RAG pipeline for
+                  real, everyday reflection.
                 </p>
                 <ul class="tech-stack" aria-label="Tech stack">
-                  <li>JavaScript</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>CSP</li>
+                  <li>React Native</li>
+                  <li>FastAPI</li>
+                  <li>RAG</li>
+                  <li>Claude</li>
                 </ul>
-                <a href="https://9by9.org" target="_blank" rel="noopener noreferrer">play now →</a>
+                <div class="project-status">
+                  <span class="badge">testflight beta</span>
+                </div>
+                <a href="https://testflight.apple.com/join/uRJFShta" target="_blank" rel="noopener noreferrer">join beta →</a>
               </div>
-            </div>
-            <figure class="project-display">
-              <a href="https://9by9.org" target="_blank" rel="noopener noreferrer" aria-label="Open Nine by Nine website">
-                <img src="ninebynine-new.png" alt="Nine by Nine Sudoku AI gameplay screenshot">
-              </a>
-            </figure>
-          </div>
+            </article>
 
-          <!--<div class="project-card">
-            <div class="card-main">
-              <h3>Game 2 Name</h3>
-              <p>A short description of what this game is about.</p>
-              <ul class="tech-stack" aria-label="Tech stack">
-                <li>TBD</li>
-              </ul>
-              <span class="badge">coming soon</span>
-            </div>
-          </div>
-        -->
-
-          <div class="project-row">
-            <div class="project-card">
+            <!-- Umrah VR Simulation -->
+            <article class="project-card project-card--tile">
+              <figure class="project-display">
+                <img src="umrah-vr.png" alt="Umrah VR Simulation thumbnail">
+              </figure>
               <div class="card-main">
                 <h3>Umrah VR Simulation</h3>
                 <p>
@@ -177,13 +172,46 @@
                   <li>Maya</li>
                 </ul>
                 <div class="project-status">
-                  <span class="badge">coming soon</span>
+                  <span class="badge">unreleased</span>
                 </div>
               </div>
-            </div>
-            <figure class="project-display">
-              <img src="umrah-vr.png" alt="Umrah VR Simulation thumbnail">
-            </figure>
+            </article>
+
+            <!-- Nine by Nine: Sudoku, N Queens, and Nonograms -->
+            <article class="project-card project-card--tile">
+              <figure class="project-display">
+                <a href="https://9by9.org" target="_blank" rel="noopener noreferrer" aria-label="Open Nine by Nine website">
+                  <img src="ninebynine-home.jpg" alt="Nine by Nine homepage showing the Sudoku, N Queens, and Nonograms games">
+                </a>
+              </figure>
+              <div class="card-main">
+                <h3>Nine by Nine</h3>
+                <p>
+                  Three classic constraint-satisfaction puzzles (Sudoku, N Queens, and
+                  Nonograms) playable by hand, then replayed step-by-step in Watch
+                  Algorithm mode: one tested square, one accepted move, one backtrack at a time.
+                </p>
+                <ul class="tech-stack" aria-label="Tech stack">
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>CSP</li>
+                </ul>
+                <a href="https://9by9.org" target="_blank" rel="noopener noreferrer">play now →</a>
+              </div>
+            </article>
+
+            <!-- Open slot for the next project -->
+            <article class="project-card project-card--tile project-card--placeholder">
+              <div class="project-display project-display--empty" aria-hidden="true">
+                <span class="placeholder-icon">◌</span>
+              </div>
+              <div class="card-main">
+                <h3>More soon</h3>
+                <p>Another project is in the works. Check back soon.</p>
+              </div>
+            </article>
+
           </div>
         </section>
 
@@ -245,7 +273,7 @@
         <section id="contact">
           <h2>> Contact</h2>
           <div class="contact-box">
-            <p class="contact-intro">> send a message — it goes straight to my inbox.</p>
+            <p class="contact-intro">> send a message, it goes straight to my inbox.</p>
             <form id="contact-form" class="contact-form" novalidate>
               <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="form-field">
